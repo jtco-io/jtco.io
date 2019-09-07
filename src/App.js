@@ -12,22 +12,45 @@ function App() {
   return (
     <div className="App">
       <AppNav />
-      <Jumbotron fluid>
-      <Container>
-        <h1>Fluid jumbotron</h1>
-        <p>
-          This is a modified jumbotron that occupies the entire horizontal space of
-          its parent.
-        </p>
+        <Jumbotron fluid>
+          <Container>
+            <h1>Technology Forerunner</h1>
+            <p>
+              Rethinking what is possible with tomorrows ideas.
+            </p>
+          </Container>
+        </Jumbotron>
+    <Row>
 
-      </Container>
-    </Jumbotron>
+        <Col sm>
+          <h3>Hardware, Networking, Software Design</h3>
+          <p>
+            Let us improve your organizations process's with technical solutions,
+          find ways to provide better guarantees and while keeping your users data
+          secure.
+          </p>
+        </Col>
 
-      <Row>
-          <Col>1 of 3</Col>
-          <Col>2 of 3</Col>
-          <Col>3 of 3</Col>
-        </Row>
+        <Col sm>
+          <h3>Web Design, Marketing, Cloud Migrations</h3>
+          <p>
+            Let us improve your organizations process's with technical solutions,
+          find ways to provide better guarantees and while keeping your users data
+          secure.
+          </p>
+        </Col>
+
+        <Col sm>
+          <h3>Solutions Architect, Reliability Engineering, Information Security</h3>
+
+          <p>
+            Let us improve your organizations process's with technical solutions,
+          find ways to provide better guarantees and while keeping your users data
+          secure.
+          </p>
+        </Col>
+
+      </Row>
     </div>
   );
 }
