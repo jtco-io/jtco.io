@@ -1,7 +1,7 @@
 [build]
-  publish = "build"
-#  command = "yarn run build && yarn run sentry_release"
   command = "yarn run build"
+  functions = "built-lambda" # netlify-lambda builds to this folder AND Netlify reads functions from here
+  publish = "build"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
