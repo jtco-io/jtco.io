@@ -23,23 +23,21 @@ function AppNav() {
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
 
-          <LinkContainer to="/services">
-            <Nav.Link>Services</Nav.Link>
-          </LinkContainer>
-
           <LinkContainer to="/contact">
             <Nav.Link>Contact</Nav.Link>
           </LinkContainer>
 
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown title="Services" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">
+              Onsight IT
+            </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
-              Another action
+              Marketing and Business Solutions
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">
-              Separated link
+              Scaling out and Security
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
