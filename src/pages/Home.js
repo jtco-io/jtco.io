@@ -15,7 +15,7 @@ function Home() {
       <Jumbotron fluid>
         <Container>
           <h1>Technology Forerunner</h1>
-          <p>Rethinking what is possible with tomorrows ideas.</p>
+          <p>Rethinking what is possible with tomorrow's ideas.</p>
         </Container>
       </Jumbotron>
 
