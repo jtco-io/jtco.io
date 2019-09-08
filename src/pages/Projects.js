@@ -5,11 +5,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// import "./Contact.css";
+// import "./Projects.css";
 
-function Contact() {
+function Projects() {
   return (
-    <div className="Contact">
+    <div className="Projects">
       <Jumbotron fluid>
         <Container>
           <h1>Public Outreach</h1>
@@ -47,4 +47,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Projects;

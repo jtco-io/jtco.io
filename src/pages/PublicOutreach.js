@@ -5,11 +5,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import "./App.css";
+import "./PublicOutreach.css";
 
-function App() {
+function PublicOutreach() {
   return (
-    <div className="App">
+    <div className="PublicOutreach">
       <Jumbotron fluid>
         <Container>
           <h1>Public Outreach</h1>
@@ -47,4 +47,4 @@ function App() {
   );
 }
 
-export default App;
+export default PublicOutreach;
