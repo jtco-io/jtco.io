@@ -1,5 +1,6 @@
 import React from 'react';
 import AppNav from "./AppNav"
+import NewsFeed from "./NewsFeed"
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
@@ -20,37 +21,45 @@ function App() {
             </p>
           </Container>
         </Jumbotron>
-    <Row>
 
-        <Col sm>
-          <h3>Hardware, Networking, Software Design</h3>
-          <p>
-            Let us improve your organizations process's with technical solutions,
-          find ways to provide better guarantees and while keeping your users data
-          secure.
-          </p>
-        </Col>
+        <div className="Info">
+          <Row>
 
-        <Col sm>
-          <h3>Web Design, Marketing, Cloud Migrations</h3>
-          <p>
-            Let us improve your organizations process's with technical solutions,
-          find ways to provide better guarantees and while keeping your users data
-          secure.
-          </p>
-        </Col>
+              <Col sm>
+                <h3>Hardware, Networking, Software Design</h3>
+                <p>
+                  Let us improve your organizations process's with technical solutions,
+                find ways to provide better guarantees and while keeping your users data
+                secure.
+                </p>
+              </Col>
 
-        <Col sm>
-          <h3>Solutions Architect, Reliability Engineering, Information Security</h3>
+              <Col sm>
+                <h3>Web Design, Marketing, Cloud Migrations</h3>
+                <p>
+                  Let us improve your organizations process's with technical solutions,
+                find ways to provide better guarantees and while keeping your users data
+                secure.
+                </p>
+              </Col>
 
-          <p>
-            Let us improve your organizations process's with technical solutions,
-          find ways to provide better guarantees and while keeping your users data
-          secure.
-          </p>
-        </Col>
+              <Col sm>
+                <h3>Solutions Architect, Reliability Engineering, Information Security</h3>
 
-      </Row>
+                <p>
+                  Let us improve your organizations process's with technical solutions,
+                find ways to provide better guarantees and while keeping your users data
+                secure.
+                </p>
+              </Col>
+
+            </Row>
+
+            <NewsFeed/>
+        </div>
+
+
+
     </div>
   );
 }
