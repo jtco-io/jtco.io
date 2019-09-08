@@ -32,16 +32,17 @@ function NewsGenerator() {
 class NewsFeed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loading: false, msg: null };
+    this.state = { loading: false, msg: null, articles: [
+        {title: "News Title1!", body: "News Body"},
+        {title: "News Title2!", body: "News Body"}
+      ] };
   }
 
-  handleClick = api => e => {
-    e.preventDefault();
-
+  componentDidMount() {
     this.setState({ loading: true });
-    fetch("/.netlify/functions/" + api)
+    fetch("/.netlify/functions/" + "fetchFeed")
       .then(response => response.json())
-      .then(json => this.setState({ loading: false, msg: json.msg }));
+      .then(json => this.setState({ loading: false, msg: json.msg , articles: this.state.articles.concat(json.articles)}));
   };
 
   render() {
@@ -49,19 +50,23 @@ class NewsFeed extends React.Component {
 
     return (
       <div>
-        <p>
-          <button onClick={this.handleClick("hello")}>
-            {loading ? "Loading..." : "Call Lambda"}
-          </button>
-          <button onClick={this.handleClick("fetchFeed")}>
-            {loading ? "Loading..." : "Call Async Lambda"}
-          </button>
-          <br />
-          <span>{msg}</span>
-        </p>
 
         <div className="News">
-          <NewsGenerator />
+          {
+            this.state.articles.length !== 0 ?
+            this.state.articles.map(article =>
+              <ListGroup.Item>
+                <Container>
+                  <Row>
+                    <Col md={{ span: 6, offset: 3 }}>
+                      <h4>{article.title}</h4>
+                      <p>{article.body}</p>
+                    </Col>
+                  </Row>
+                </Container>
+              </ListGroup.Item>
+            ): <div> None </div>
+          }
         </div>
       </div>
     );
