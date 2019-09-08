@@ -12,7 +12,7 @@ function Projects() {
     <div className="Projects">
       <Jumbotron fluid>
         <Container>
-          <h1>Public Outreach</h1>
+          <h1>Projects</h1>
           <p>
             Ways we enable communities to better foster success and share
             opportunity.
@@ -23,21 +23,22 @@ function Projects() {
       <div className="Info">
         <Row>
           <Col sm>
-            <h3>Providing Access to Tools</h3>
+            <h3>Opensource</h3>
             <p>
-              Making sure access to tools and reagents are readily available.
+              * rjango
+
             </p>
           </Col>
 
           <Col sm>
-            <h3>Teaching Valuable Skills</h3>
+            <h3>Startups</h3>
             <p>
               Passing on concepts and recipes to foster healthier communities.
             </p>
           </Col>
 
           <Col sm>
-            <h3>Creating better, actualized humans.</h3>
+            <h3>Previous Work</h3>
 
             <p>Allowing others to make their own journey</p>
           </Col>
