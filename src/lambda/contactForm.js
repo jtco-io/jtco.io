@@ -2,16 +2,20 @@ export async function handler(event, context) {
   var nodemailer = require('nodemailer');
 
   var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: '465',
+    secure: true,
     auth: {
-      user: 'youremail@gmail.com',
-      pass: 'yourpassword'
+      type: "OAuth2",
+      user: process.env.CONTACT_FORM_MAIL_EMAIL,
+      serviceClient: process.env.CONTACT_FORM_MAIL_ID,
+      privateKey: process.env.CONTACT_FORM_MAIL_KEY
     }
   });
 
   var mailOptions = {
-    from: 'youremail@gmail.com',
-    to: 'myfriend@yahoo.com',
+    from: process.env.CONTACT_FORM_MAIL_EMAIL,
+    to: process.env.CONTACT_FORM_MAIL_EMAIL,
     subject: 'Sending Email using Node.js',
     text: 'That was easy!'
   };
