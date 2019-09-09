@@ -2,47 +2,39 @@ import React from "react";
 
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 // import "./Contact.css";
 
 function Contact() {
   return (
     <div className="Contact">
-      <Jumbotron fluid>
-        <Container>
-          <h1>Public Outreach</h1>
-          <p>
-            Ways we enable communities to better foster success and share
-            opportunity.
-          </p>
+      <h1>Contact</h1>
+      <p>How can we help.</p>
+      <Container>
+          <Form>
+
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" placeholder="Your Name" />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+            </Form.Group>
+
+            <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Label>Description of your project</Form.Label>
+              <Form.Control as="textarea" rows="3" />
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
         </Container>
-      </Jumbotron>
-
-      <div className="Info">
-        <Row>
-          <Col sm>
-            <h3>Providing Access to Tools</h3>
-            <p>
-              Making sure access to tools and reagents are readily available.
-            </p>
-          </Col>
-
-          <Col sm>
-            <h3>Teaching Valuable Skills</h3>
-            <p>
-              Passing on concepts and recipes to foster healthier communities.
-            </p>
-          </Col>
-
-          <Col sm>
-            <h3>Creating better, actualized humans.</h3>
-
-            <p>Allowing others to make their own journey</p>
-          </Col>
-        </Row>
-      </div>
     </div>
   );
 }
