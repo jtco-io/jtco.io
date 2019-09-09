@@ -3,6 +3,8 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+import "./GridMosaic.css";
+
 function isEven(number){
   return number % 2 == 0
 }
@@ -33,7 +35,7 @@ export function GridMosaic(items) {
       }
       rowItems = items.slice(i, i + rowItemCount)
       rows.push(
-        <Row key={rows.length + 1}>
+        <Row key={rows.length + 1} className="GridMosaicRow">
           {items.slice(i, i + rowItemCount)}
         </Row>
       )
