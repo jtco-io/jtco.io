@@ -27,6 +27,10 @@ function AppNav() {
             <Nav.Link>Contact</Nav.Link>
           </LinkContainer>
 
+          <LinkContainer to="/projects">
+            <Nav.Link>Projects</Nav.Link>
+          </LinkContainer>
+
           <NavDropdown title="Services" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">
               Onsight IT

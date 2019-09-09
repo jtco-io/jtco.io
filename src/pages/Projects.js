@@ -7,6 +7,19 @@ import Col from "react-bootstrap/Col";
 
 // import "./Projects.css";
 
+function fakeProjects() {
+  const projects = []
+  let times = 10
+  for(var i=0; i < times; i ++) {
+    projects.push({
+      organization: "",
+      title: "",
+      tags: "",
+      body: "",
+    })
+  }
+}
+
 function Projects() {
   return (
     <div className="Projects">
