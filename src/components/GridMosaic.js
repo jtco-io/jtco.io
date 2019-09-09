@@ -3,6 +3,14 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+function isEven(number){
+  return number % 2 == 0
+}
+
+function coinFlip() {
+    return (Math.floor(Math.random() * 2) == 0);
+}
+
 export function GridMosaic(items) {
   for (var item_index in items) {
     items[item_index] = <Col key={item_index} >
@@ -11,11 +19,22 @@ export function GridMosaic(items) {
   }
 
   let i = 0
+  let rowItemCount = 2
+  let rowItems = []
+
   const rows = []
+
   while (i < items.length) {
+      if (coinFlip()) {
+        rowItemCount = 3
+      }
+      else {
+        rowItemCount = 2
+      }
+      rowItems = items.slice(i, i + rowItemCount)
       rows.push(
         <Row key={rows.length + 1}>
-          {items.slice(i, i + 3)}
+          {items.slice(i, i + rowItemCount)}
         </Row>
       )
       i = i + 3;
