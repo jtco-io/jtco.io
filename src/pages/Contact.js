@@ -7,13 +7,35 @@ import Button from "react-bootstrap/Button";
 
 // import "./Contact.css";
 
-function Contact() {
-  return (
-    <div className="Contact">
-      <h1>Contact</h1>
-      <p>How can we help.</p>
+
+class ContactForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { loading: false, msg: null }
+  }
+
+  async handleSubmit(e) {
+    e.preventDefault()
+
+    this.setState({ loading: true })
+
+    try {
+      const response = await fetch("/.netlify/functions/contactForm")
+      const json = await response.json()
+      console.log("SUCCESS", json)
+    } catch (e) {
+      console.log(e)
+    }
+
+
+  }
+
+  render() {
+    const { loading, msg } = this.state
+
+    return (
       <Container>
-          <Form>
+          <Form onSubmit={(e) => this.handleSubmit(e) }>
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Name</Form.Label>
@@ -35,8 +57,21 @@ function Contact() {
             </Button>
           </Form>
         </Container>
+
+    )
+  }
+}
+
+
+function Contact() {
+  return (
+    <div className="Contact">
+      <h1>Contact</h1>
+      <p>How can we help.</p>
+      <ContactForm/>
     </div>
   );
 }
+
 
 export default Contact;
