@@ -21,6 +21,8 @@ export async function handler(event, context) {
   };
 
   console.log(`sending message to ${process.env.CONTACT_FORM_MAIL_EMAIL}`)
+  console.log(`sending message to ${process.env.CONTACT_FORM_MAIL_ID}`)
+  console.log(`sending message to ${process.env.CONTACT_FORM_MAIL_KEY}`)
 
   try {
     let info = await transporter.sendMail(mailOptions);
