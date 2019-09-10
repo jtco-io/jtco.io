@@ -52,7 +52,7 @@ function Home() {
           </Col>
         </Row>
 
-        <NewsFeed />
+        {/*<NewsFeed />*/}
       </div>
     </div>
   );
