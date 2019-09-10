@@ -1,32 +1,30 @@
 export async function handler(event, context) {
   var nodemailer = require('nodemailer');
+  var sgTransport = require('nodemailer-sendgrid-transport');
 
-  var transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: '465',
-    secure: true,
-    auth: {
-      type: "OAuth2",
-      user: process.env.CONTACT_FORM_MAIL_EMAIL,
-      serviceClient: process.env.CONTACT_FORM_MAIL_ID,
-      privateKey: process.env.CONTACT_FORM_MAIL_KEY
-    }
-  });
+  var transporter = nodemailer.createTransport(
+    sgTransport(
+      {
+          auth: {
+                api_user: process.env.SENDGRID_USERNAME,
+                api_key: process.env.SENDGRID_PASSWORD
+          }
+      }
+    )
+  );
 
+  // process.env.CONTACT_FORM_MAIL_ID
   var mailOptions = {
-    from: process.env.CONTACT_FORM_MAIL_EMAIL,
-    to: process.env.CONTACT_FORM_MAIL_EMAIL,
+    from: "ncrmro@jtco.io",
+    to: "ncrmro@jtco.io",
     subject: 'Sending Email using Node.js',
     text: 'That was easy!'
   };
 
-  console.log(`sending message to ${process.env.CONTACT_FORM_MAIL_EMAIL}`)
-  console.log(`sending message to ${process.env.CONTACT_FORM_MAIL_ID}`)
-  console.log(`sending message to ${process.env.CONTACT_FORM_MAIL_KEY}`)
-
   try {
+    console.log("ATTEMPTING SEND")
     let info = await transporter.sendMail(mailOptions);
-
+    console.log("info")
     return {
       statusCode: 200,
       body: JSON.stringify({
@@ -34,10 +32,13 @@ export async function handler(event, context) {
       })
     };
   } catch (err) {
-    console.log(err); // output to netlify function log
+    console.log('CAUGHT ERROR', err); // output to netlify function log
     return {
       statusCode: 500,
       body: JSON.stringify({ msg: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
     };
   }
 }
+
+
+// http://localhost:9000/.netlify/functions/
