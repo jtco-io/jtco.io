@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 
 import "./Home.css";
 
-import NewsFeed from "../components/NewsFeed";
+// import NewsFeed from "../components/NewsFeed";
 
 function Home() {
   return (
