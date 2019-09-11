@@ -6,8 +6,28 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 
 // import "./Contact.css";
+
+function FormLoading(props) {
+  if (props.loading){
+    return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
+  } else if (props.success) {
+    return (
+      <div>{props.msg ? props.msg : "Success"}</div>
+    )
+  } else {
+    return (
+      <div>{props.msg ? props.msg : "Failed!"}</div>
+    )
+  }
+
+}
 
 
 class ContactForm extends React.Component {
@@ -16,6 +36,7 @@ class ContactForm extends React.Component {
     this.state = {
       loading: false,
       msg: null,
+      success: null,
       form: {
         name: "",
         email: "",
@@ -24,12 +45,10 @@ class ContactForm extends React.Component {
     }
   }
 
-  async handleSubmit(e) {
-    e.preventDefault()
+  async handleSubmit(ele) {
+    ele.preventDefault()
 
     this.setState({ loading: true })
-
-    console.log(e)
 
     try {
       const response = await axios.post(
@@ -37,23 +56,30 @@ class ContactForm extends React.Component {
         this.state.form
       )
       const json = await response.json()
-
-      console.log("SUCCESS", json)
+      this.setState({
+          loading: false,
+          msg: "Your message has been successfully sent!",
+          success: false
+        }
+      )
 
     } catch (e) {
-
-      console.log(e)
+      this.setState({
+          loading: false,
+          msg: e,
+          success: false
+        }
+      )
     }
-
   }
 
 
 
   render() {
-    const { loading, msg } = this.state
-
-    return (
-      <Container>
+    const { loading, success, msg } = this.state
+    if (loading === false && success === null){
+      return (
+        <Container>
           <Form onSubmit={(e) => this.handleSubmit(e) }>
 
             <Form.Group controlId="formBasicEmail">
@@ -84,8 +110,14 @@ class ContactForm extends React.Component {
             </Button>
           </Form>
         </Container>
+      )
+    } else {
+      return (
+      <FormLoading loading={loading} success={success}/>
 
     )
+    }
+
   }
 }
 
