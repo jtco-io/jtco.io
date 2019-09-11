@@ -60,21 +60,21 @@ class ContactForm extends React.Component {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text" placeholder="Your Name"
-                onChange={(i) => this.setState({form: {name: i.target.value } })}
+                onChange={(i) => this.setState({form: {...this.state.form, name: i.target.value } })}
               />
             </Form.Group>
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" placeholder="Enter email"
-                onChange={(i) => this.setState({form: {email: i.target.value } })}
+                onChange={(i) => this.setState({form: {...this.state.form, email: i.target.value } })}
               />
             </Form.Group>
 
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Label>Description of your project</Form.Label>
               <Form.Control as="textarea" rows="3"
-              onChange={(i) => this.setState({form: {projectDescription: i.target.value } })}
+              onChange={(i) => this.setState({form: {...this.state.form, projectDescription: i.target.value } })}
               />
 
             </Form.Group>
