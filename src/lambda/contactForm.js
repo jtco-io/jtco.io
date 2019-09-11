@@ -15,6 +15,8 @@ export async function handler(event, context) {
 
   const body = JSON.parse(event.body)
 
+  console.log('json body', body)
+
   // process.env.CONTACT_FORM_MAIL_ID
   var mailOptions = {
     from: body.email,
