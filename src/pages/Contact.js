@@ -1,5 +1,7 @@
 import React from "react";
 
+import axios from "axios"
+
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -30,12 +32,9 @@ class ContactForm extends React.Component {
     console.log(e)
 
     try {
-      const response = await fetch(
-        "/.netlify/functions/contactForm", {
-          body: JSON.stringify(
-            this.state.form
-          )
-        }
+      const response = await axios.post(
+        "/.netlify/functions/contactForm",
+        this.state.form
       )
       const json = await response.json()
 
