@@ -13,12 +13,14 @@ export async function handler(event, context) {
     )
   );
 
+  const body = JSON.parse(event.body)
+
   // process.env.CONTACT_FORM_MAIL_ID
   var mailOptions = {
-    from: "ncrmro@jtco.io",
-    to: "ncrmro@jtco.io",
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
+    from: body.email,
+    to: "contact@jtco.io",
+    subject: 'Contact Form Submission: jtco.io',
+    text: `\nFrom: ${body.name}: ${body.email}\n\n\n${body.projectDescription}`
   };
 
   try {
