@@ -9,14 +9,16 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 
+import withTracker from "./containers/WithTracker"
+
 function App() {
   return (
     <div className="App">
       <Router>
         <AppNav />
-        <Route path="/" exact component={Home} />
-        <Route path="/contact" exact component={Contact} />
-        <Route path="/projects" exact component={Projects} />
+        <Route path="/" exact component={withTracker(Home)} />
+        <Route path="/contact" exact component={withTracker(Contact)} />
+        <Route path="/projects" exact component={withTracker(Projects)} />
       </Router>
     </div>
   );
