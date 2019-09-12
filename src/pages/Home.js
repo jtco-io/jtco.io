@@ -33,9 +33,8 @@ function Home() {
           <Col sm>
             <h3>Web Design, Marketing, Cloud Migrations</h3>
             <p>
-              Let us improve your organizations process's with technical
-              solutions, find ways to provide better guarantees and while
-              keeping your users data secure.
+              Need to improve your customer facing assets, lead funnels or improve your customer acquisition cost? Let us
+              assist in driving new and existing customer.
             </p>
           </Col>
 
@@ -45,9 +44,8 @@ function Home() {
             </h3>
 
             <p>
-              Let us improve your organizations process's with technical
-              solutions, find ways to provide better guarantees and while
-              keeping your users data secure.
+              Have unmet business needs or existing infrastructure? Let us devise solutions to increase your bottem line
+              and insurce your technical solutions are reliable and secure.
             </p>
           </Col>
         </Row>
