@@ -25,7 +25,10 @@
     "build:lambda": "netlify-lambda build src/lambda",
     "prettier": "prettier --write 'src/**/*{.ts,.tsx,js}'",
     "test": "react-scripts test",
-    "sentry_release": "sentry-cli releases new --finalize -p jtco-static $COMMIT_REF && sentry-cli releases set-commits --commit \"jtco-io / jtco.io@$COMMIT_REF\" $COMMIT_REF && sentry-cli releases -p jtco-static files $COMMIT_REF upload-sourcemaps dist && sentry-cli releases deploys $COMMIT_REF new -e $ENVIRONMENT",
+    "sentry_on_deploy": "npm run sentry_finalize && npm run sentry_release",
+    "sentry_finalize": "sentry-cli releases new --finalize -p jtco-static $COMMIT_REF",
+    "sentry_release": "sentry-cli releases set-commits --commit \"jtco-io / jtco.io@$COMMIT_REF\" $COMMIT_REF && sentry-cli releases -p jtco-static files $COMMIT_REF upload-sourcemaps dist && sentry-cli releases deploys $COMMIT_REF new -e $ENVIRONMENT",
+    "sentry_source_maps": "sentry-cli releases -p jtco-static files $COMMIT_REF upload-sourcemaps dist && sentry-cli releases deploys $COMMIT_REF new -e $ENVIRONMENT",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

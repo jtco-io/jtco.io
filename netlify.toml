@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && npm run sentry_release"
+  command = "npm run build && npm run sentry_on_deploy"
   functions = "built-lambda" # netlify-lambda builds to this folder AND Netlify reads functions from here
   publish = "build"
 
