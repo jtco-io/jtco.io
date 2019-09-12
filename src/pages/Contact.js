@@ -55,11 +55,11 @@ class ContactForm extends React.Component {
         "/.netlify/functions/contactForm",
         this.state.form
       )
-      const json = await response.json()
+      // const json = await response.json()
       this.setState({
           loading: false,
           msg: "Your message has been successfully sent!",
-          success: false
+          success: true
         }
       )
 
