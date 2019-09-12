@@ -113,7 +113,7 @@ class ContactForm extends React.Component {
       )
     } else {
       return (
-      <FormLoading loading={loading} success={success}/>
+      <FormLoading loading={loading} success={success} msg={msg}/>
 
     )
     }
