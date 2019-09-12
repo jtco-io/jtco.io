@@ -45,7 +45,7 @@ function Home() {
 
             <p>
               Have unmet business needs or existing infrastructure? Let us devise solutions to increase your bottem line
-              and insurce your technical solutions are reliable and secure.
+              and insure your technical solutions are reliable and secure.
             </p>
           </Col>
         </Row>
