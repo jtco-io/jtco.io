@@ -6,6 +6,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import "./Home.css";
+import {ContactForm} from "../pages/Contact"
+
+
+
 
 // import NewsFeed from "../components/NewsFeed";
 
@@ -51,6 +55,7 @@ function Home() {
         </Row>
 
         {/*<NewsFeed />*/}
+        <ContactForm/>
       </div>
     </div>
   );
