@@ -14,6 +14,7 @@ import {ContactForm} from "../pages/Contact"
 
 
 
+import Octicon, {Zap, Shield, Ruby} from '@primer/octicons-react'
 // import NewsFeed from "../components/NewsFeed";
 
 
@@ -43,30 +44,32 @@ function Home() {
       <div className="Info">
         <Row>
           <Col sm>
-            <h3>Hardware, Networking, Software Design</h3>
+            <Octicon icon={Zap}/>
+
+            <h3>Custom Applications</h3>
             <p>
-              Let us improve your organizations process's with technical
-              solutions, find ways to provide better guarantees and while
-              keeping your users data secure.
+              Let us improve or augment your business process with custom built solutions.
             </p>
           </Col>
 
           <Col sm>
-            <h3>Web Design, Marketing, Cloud Migrations</h3>
+            <Octicon icon={Ruby}/>
+            <h3>Web Design and Marketing</h3>
             <p>
               Need to improve your customer facing assets, lead funnels or improve your customer acquisition cost? Let us
-              assist in driving new and existing customer.
+              assist in driving new and existing customer to your services.
             </p>
           </Col>
 
           <Col sm>
+            <Octicon icon={Shield}/>
             <h3>
-              Solutions Architect, Reliability Engineering, Information Security
+              Info Sec & IT Consulting Services
             </h3>
 
             <p>
-              Have unmet business needs or existing infrastructure? Let us devise solutions to increase your bottem line
-              and insure your technical solutions are reliable and secure.
+              Let us help your organization work more effortlessly. Whether its cloud migrations or increasing WiFi range.
+              We also perform hardware upgrades on existing infrastructure on future hardware.
             </p>
           </Col>
         </Row>
