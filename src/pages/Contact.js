@@ -30,7 +30,7 @@ function FormLoading(props) {
 }
 
 
-class ContactForm extends React.Component {
+export class ContactForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
