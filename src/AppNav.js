@@ -11,9 +11,12 @@ import Button from "react-bootstrap/Button";
 
 import { LinkContainer } from "react-router-bootstrap"
 
+import "./AppNav.css";
+
+
 function AppNav() {
   return (
-    <Navbar>
+    <Navbar bg="dark" >
       <Navbar.Brand href="#home">jtco.io</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
