@@ -19,10 +19,8 @@ function AppNav() {
     <Navbar bg="dark" >
       <Navbar.Brand href="#home">jtco.io</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-
-          <LinkContainer to="/">
+      <Navbar.Collapse className="justify-content-end">
+        <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
 
@@ -47,11 +45,6 @@ function AppNav() {
               Scaling out and Security
             </NavDropdown.Item>
           </NavDropdown>
-        </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form>
       </Navbar.Collapse>
     </Navbar>
   );
