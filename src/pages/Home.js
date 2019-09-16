@@ -5,6 +5,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import Image from "react-bootstrap/Image";
+import Carousel from "react-bootstrap/Carousel";
+
 import "./Home.css";
 import {ContactForm} from "../pages/Contact"
 
@@ -13,15 +16,29 @@ import {ContactForm} from "../pages/Contact"
 
 // import NewsFeed from "../components/NewsFeed";
 
+
+function HomeCarousel() {
+  return (
+    <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="htx_background_cropped.jpg"
+            alt="A picture with Houston's downtown skyline in the background."
+          />
+          <Carousel.Caption>
+            <h3>Rethinking Tomorrows Ideas</h3>
+            <p>Enhancing your vision.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+  )
+}
+
 function Home() {
   return (
     <div className="Home">
-      <Jumbotron fluid>
-        <Container>
-          <h1>Technology Forerunner</h1>
-          <p>Rethinking what is possible with tomorrow's ideas.</p>
-        </Container>
-      </Jumbotron>
+      <HomeCarousel/>
 
       <div className="Info">
         <Row>
