@@ -75,7 +75,7 @@ function Home() {
         </Row>
 
         {/*<NewsFeed />*/}
-        <ContactForm/>
+        {/*<ContactForm/>*/}
       </div>
     </div>
   );
