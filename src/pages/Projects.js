@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 import { GridMosaic } from "../components/GridMosaic"
+import {PcJTX} from './ProjectCards';
 
 function fakeProjects() {
   const projects = []
@@ -23,26 +24,30 @@ function fakeProjects() {
 }
 function ProjectCard(proj) {
   return (
-    <Card>
-      <Card.Header as="h5">Featured</Card.Header>
-      <Card.Body>
-        <Card.Title>{proj.title}</Card.Title>
-        <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+      <Card>
+        <Card.Img variant="top" src="proj_jtx.png" />
+        <Card.Body>
+          <Card.Title>jtronics.exchange</Card.Title>
+          <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.Body>
+      </Card>
   )
 }
 
 function Projects() {
 
-  const projects = fakeProjects();
+  // const projects = fakeProjects();
+  //
+  // projects.forEach(
+  //   (project, key) => projects[key] = ProjectCard(projects[key])
+  // )
 
-  projects.forEach(
-    (project, key) => projects[key] = ProjectCard(projects[key])
-  )
+  const projects = [
+    <PcJTX/>
+  ]
 
   return (
     <div className="Projects">
