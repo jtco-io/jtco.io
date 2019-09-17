@@ -24,17 +24,15 @@ function AppNav() {
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
-          <LinkContainer to="/">
-            <Nav.Link>Home</Nav.Link>
+
+          <LinkContainer to="/projects">
+            <Nav.Link>Projects</Nav.Link>
           </LinkContainer>
 
           <LinkContainer to="/contact">
             <Nav.Link>Contact</Nav.Link>
           </LinkContainer>
 
-          <LinkContainer to="/projects">
-            <Nav.Link>Projects</Nav.Link>
-          </LinkContainer>
 
           <NavDropdown title="Services" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">
