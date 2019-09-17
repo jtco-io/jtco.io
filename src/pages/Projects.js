@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 import { GridMosaic } from "../components/GridMosaic"
-import {PcJTX} from './ProjectCards';
+import {PcJTX, PcFE} from './ProjectCards';
 
 function fakeProjects() {
   const projects = []
@@ -46,7 +46,8 @@ function Projects() {
   // )
 
   const projects = [
-    <PcJTX/>
+    <PcJTX/>,
+    <PcFE/>
   ]
 
   return (

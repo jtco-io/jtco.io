@@ -23,3 +23,18 @@ export function PcJTX(proj) {
       </Card>
   )
 }
+
+export function PcFE(proj) {
+  return (
+      <Card>
+        <Card.Img variant="top" src="proj_fe.png" />
+        <Card.Body>
+          <Card.Title>Floral Events</Card.Title>
+          <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+  )
+}
