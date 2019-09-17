@@ -17,10 +17,14 @@ import "./AppNav.css";
 function AppNav() {
   return (
     <Navbar bg="dark" >
-      <Navbar.Brand href="#home">jtco.io</Navbar.Brand>
+
+      <LinkContainer to="/">
+        <Navbar.Brand >jtco.io</Navbar.Brand>
+      </LinkContainer>
+
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
-        <LinkContainer to="/">
+          <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
 
