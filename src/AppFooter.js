@@ -17,9 +17,9 @@ import "./AppNav.css";
 function AppFooter() {
   return (
     <Navbar bg="dark" fixed="bottom" className="justify-content-between">
-      <Link to="/">
-        jtco.io
-      </Link>
+      <LinkContainer to="/">
+        <Navbar.Brand >jtco.io</Navbar.Brand>
+      </LinkContainer>
     </Navbar>
   );
 }
